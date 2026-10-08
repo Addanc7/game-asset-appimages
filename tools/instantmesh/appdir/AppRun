@@ -1,0 +1,25 @@
+#!/bin/bash
+# InstantMesh AppImage launcher
+APPDIR="${APPDIR:-$(dirname "$(readlink -f "$0")")}"
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# Never let the host Python env leak into the bundled interpreter
+unset PYTHONHOME
+unset PYTHONPATH
+
+# User-writable data (models, caches) -- first-run weight download lives here
+export INSTANTMESH_DATA="${INSTANTMESH_DATA:-~/.local/share/instantmesh-app}"
+export HF_HOME="${INSTANTMESH_DATA}/hf"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export TORCH_HOME="${INSTANTMESH_DATA}/torch"
+export U2NET_HOME="${INSTANTMESH_DATA}/u2net"
+
+# Perf knobs (overridable)
+export CUDA_MODULE_LOADING="${CUDA_MODULE_LOADING:-LAZY}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+mkdir -p "${INSTANTMESH_DATA}"
+
+exec "$APPDIR/usr/bin/python3.11" "$APPDIR/usr/share/instantmesh/instantmesh_app.py" "$@"

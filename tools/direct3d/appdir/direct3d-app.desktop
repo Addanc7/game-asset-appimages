@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Direct3D
+Comment=Single-image to 3D mesh via DiT (DreamTechAI)
+Exec=direct3d-app %F
+Icon=direct3d-app
+Terminal=true
+Categories=Graphics;3DGraphics;

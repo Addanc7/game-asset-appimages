@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hi3DGen
+Comment=Single-image to 3D geometry (Stable-X)
+Exec=hi3dgen-app %F
+Icon=hi3dgen-app
+Terminal=true
+Categories=Graphics;3DGraphics;

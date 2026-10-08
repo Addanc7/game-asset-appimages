@@ -1,0 +1,32 @@
+#!/bin/bash
+# Hi3DGen AppImage launcher
+APPDIR="${APPDIR:-$(dirname "$(readlink -f "$0")")}"
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+# Bundled NVIDIA userspace libs (needed by .so files without RPATH,
+# e.g. onnxruntime's CUDA provider). torch finds them via its own RPATH.
+for _nvd in "$APPDIR"/usr/lib/python3.11/site-packages/nvidia/*/lib; do
+  [ -d "$_nvd" ] && LD_LIBRARY_PATH="$_nvd:$LD_LIBRARY_PATH"
+done
+export LD_LIBRARY_PATH
+unset _nvd
+
+# Never let the host Python env leak into the bundled interpreter
+unset PYTHONHOME
+unset PYTHONPATH
+
+# User-writable data (models, caches) -- first-run weight download lives here
+export HI3DGEN_DATA="${HI3DGEN_DATA:-~/.local/share/hi3dgen-app}"
+export HF_HOME="${HI3DGEN_DATA}/hf"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export TORCH_HOME="${HI3DGEN_DATA}/torch"
+export U2NET_HOME="${HI3DGEN_DATA}/u2net"
+
+# Perf knobs (overridable)
+export CUDA_MODULE_LOADING="${CUDA_MODULE_LOADING:-LAZY}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+mkdir -p "${HI3DGEN_DATA}"
+
+exec "$APPDIR/usr/bin/python3.11" "$APPDIR/usr/share/hi3dgen/hi3dgen_app.py" "$@"

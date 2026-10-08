@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=InstantMesh
+Comment=Single-image to 3D mesh (TencentARC)
+Exec=instantmesh-app %F
+Icon=instantmesh-app
+Terminal=true
+Categories=Graphics;3DGraphics;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Unique3D
+Comment=Single-image to textured 3D mesh (AiuniAI)
+Exec=unique3d-app %F
+Icon=unique3d-app
+Terminal=true
+Categories=Graphics;3DGraphics;
