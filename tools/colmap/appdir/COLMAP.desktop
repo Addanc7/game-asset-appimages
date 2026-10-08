@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=COLMAP
+Comment=COLMAP mesh tool (command line)
+Exec=colmap-bin
+Icon=COLMAP
+Terminal=true
+Categories=Graphics;3DGraphics;

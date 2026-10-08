@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=TetWild
+Comment=TetWild mesh tool (command line)
+Exec=TetWild
+Icon=TetWild
+Terminal=true
+Categories=Graphics;3DGraphics;
