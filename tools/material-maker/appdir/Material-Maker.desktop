@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Material Maker
+Comment=Procedural PBR material authoring tool
+Exec=material-maker
+Icon=Material-Maker
+Terminal=false
+Categories=Graphics;3DGraphics;

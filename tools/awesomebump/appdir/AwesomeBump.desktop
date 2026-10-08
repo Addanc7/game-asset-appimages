@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=AwesomeBump
+Comment=AwesomeBump normal-map generator
+Exec=awesomebump
+Icon=AwesomeBump
+Terminal=false
+Categories=Graphics;3DGraphics;

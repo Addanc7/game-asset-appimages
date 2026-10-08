@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Xatlas
+Comment=Xatlas mesh tool (command line)
+Exec=xatlas
+Icon=Xatlas
+Terminal=true
+Categories=Graphics;3DGraphics;

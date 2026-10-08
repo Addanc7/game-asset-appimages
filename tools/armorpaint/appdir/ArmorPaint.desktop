@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=ArmorPaint
+Comment=ArmorPaint 3D texture painting
+Exec=ArmorPaint
+Icon=ArmorPaint
+Terminal=false
+Categories=Graphics;3DGraphics;

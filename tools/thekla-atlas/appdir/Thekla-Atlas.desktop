@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Thekla-Atlas
+Comment=Thekla-Atlas mesh tool (command line)
+Exec=thekla-atlas
+Icon=Thekla-Atlas
+Terminal=true
+Categories=Graphics;3DGraphics;
