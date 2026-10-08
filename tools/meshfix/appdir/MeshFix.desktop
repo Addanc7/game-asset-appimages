@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=MeshFix
+Comment=MeshFix mesh tool (command line)
+Exec=MeshFix
+Icon=MeshFix
+Terminal=true
+Categories=Graphics;3DGraphics;

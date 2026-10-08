@@ -1,0 +1,17 @@
+#!/bin/sh
+HERE="$(dirname "$(readlink -f "$0")")"
+case "$1" in
+  mmg2d|mmg3d|mmgs)
+    tool="$1"; shift
+    exec "$HERE/usr/bin/$tool" "$@"
+    ;;
+esac
+echo "MMG 5.8.0 - anisotropic remeshing (LGPL-3.0)"
+echo "Usage: $(basename "$0") {mmg2d|mmg3d|mmgs} [options] input.mesh [output]"
+echo ""
+echo "  mmg2d : 2D mesh adaptation / remeshing"
+echo "  mmg3d : 3D tetrahedral mesh adaptation / remeshing"
+echo "  mmgs  : surface mesh adaptation / remeshing"
+echo ""
+echo "Example: $(basename "$0") mmg3d input.mesh output.meshb"
+exit 1

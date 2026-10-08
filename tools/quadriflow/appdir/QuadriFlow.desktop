@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=QuadriFlow
+Comment=QuadriFlow mesh tool (command line)
+Exec=quadriflow
+Icon=QuadriFlow
+Terminal=true
+Categories=Graphics;3DGraphics;

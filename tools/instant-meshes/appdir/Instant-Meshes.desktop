@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Instant-Meshes
+Comment=Instant-Meshes mesh tool (command line)
+Exec=InstantMeshes
+Icon=Instant-Meshes
+Terminal=true
+Categories=Graphics;3DGraphics;

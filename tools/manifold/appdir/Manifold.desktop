@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Manifold
+Comment=Manifold mesh tool (command line)
+Exec=manifold-bin
+Icon=Manifold
+Terminal=true
+Categories=Graphics;3DGraphics;

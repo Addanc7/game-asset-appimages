@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=MMG
+Comment=MMG anisotropic remeshing tools (mmg2d, mmg3d, mmgs) - command line
+Exec=mmg
+Icon=MMG
+Terminal=true
+Categories=Graphics;3DGraphics;
