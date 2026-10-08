@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Wings3D
+Comment=Wings3D subdivision modeler (Erlang)
+Exec=wings
+Icon=Wings3D
+Terminal=false
+Categories=Graphics;3DGraphics;

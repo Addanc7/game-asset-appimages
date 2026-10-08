@@ -25,8 +25,8 @@ Skipped (other agents): TRELLIS.2, Pixal3D, TripoSR, UniRig, gltfpack, Step1X-3D
 | QuadriFlow | mesh | BSD-3-Clause | done | https://drive.google.com/file/d/1cJZJze7gv4KabmlDBxNZ52Zjov5yNXuk/view?usp=drivesdk | committed | license verified from LICENSE.txt |
 | MeshFix | mesh | GPL-3.0+ dual | done | https://drive.google.com/file/d/10LaBqUfRT0F4jb6n6n4mEorTIO9mqL78/view?usp=drivesdk | committed | GPL-3.0 terms used; verified from gpl-3.0.txt |
 | MMG | mesh | LGPL-3.0 | done | https://drive.google.com/file/d/1imrzHVsk2GYbo7HUT4w-UNtSHqOlduhz/view?usp=drivesdk | committed | mmg2d+mmg3d+mmgs via dispatcher AppRun; license verified from LICENSE |
-| TetWild | mesh | GPL-3.0 | building | | | |
-| fTetWild | mesh | MPL-2.0 | building | | | |
+| TetWild | mesh | GPL-3.0 (verified) | done | https://drive.google.com/file/d/1Pw6owDD6xo7fCPBo-uTBEcjsffhSAOb_/view?usp=drivesdk | staged | --help OK; tetrahedron meshed via AppImage; CGAL 4.12 built from source |
+| fTetWild | mesh | MPL-2.0 (verified) | done | https://drive.google.com/file/d/1jynDVg6vGaYVvASqkEoox1_QbtQHS8F0/view?usp=drivesdk | staged | --help OK; tetrahedron meshed (15,923 tets) via AppImage |
 | Wings3D | mesh | BSD-style (verified, license.terms) | done | https://drive.google.com/file/d/1IT1ypYTmKeyBBuJ93DKXdsBrlbF9hmkp/view?usp=drivesdk | staged | Erlang OTP 25 runtime bundled; 35MB; beams verified loading |
 | xatlas | UV | MIT | done | https://drive.google.com/file/d/1ldc6AJejxmgIzMHMV84S7BtV5oWhou2C/view?usp=drivesdk | staged | library + example CLI; packaged the example CLI as `xatlas`; --help OK + full gazebo atlas run verified |
 | Thekla atlas | UV | MIT | done | https://drive.google.com/file/d/1rLbQOSwyhefeK7n5MGTJ15v1lzHt8xxw/view?usp=drivesdk | staged | cmake build; packaged the `thekla_atlas_test` atlas CLI as `thekla-atlas`; full cube atlas run verified |
@@ -40,8 +40,8 @@ Skipped (other agents): TRELLIS.2, Pixal3D, TripoSR, UniRig, gltfpack, Step1X-3D
 | KTX-Software/toktx | converter | Apache-2.0 (verified) | done | https://drive.google.com/file/d/1tdosea8sm5ErO_vdl1b4CL4TE8cCA0lW/view?usp=drivesdk | staged | cmake; unified `ktx` v5.0 CLI (`ktx create` = toktx successor) + toktx symlink; --version + png→ktx2 test OK; publish staged |
 | OpenCOLLADA | converter | MIT (verified) | done | https://drive.google.com/file/d/1zdgG_XM4pGwIeybvzmRGVGj7gN80GqgZ/view?usp=drivesdk | staged | cmake; DAEValidator + OpenCOLLADAValidator via dispatcher AppRun; both validated a test .dae; publish staged |
 | glTF-Validator | converter | Apache-2.0 (verified) | done | https://drive.google.com/file/d/1dmWudv6wYA4yBf_eLdydPpwhfbfEUixz/view?usp=drivesdk | staged | Dart source → native binary (Dart 2.19.6 AOT); --help + glb validation test OK; publish staged |
-| Meshroom/AliceVision | photogrammetry | MPL-2.0 | building | | | big C++ build, CUDA for depth maps |
-| COLMAP | photogrammetry | BSD-3-Clause | building | | | cmake |
+| Meshroom/AliceVision | photogrammetry | MPL-2.0 | skipped | | | 3-4h+ build on 2 cores; over per-tool budget (see status/meshroom.md) |
+| COLMAP | photogrammetry | BSD-3-Clause (verified) | done | https://drive.google.com/file/d/1rlnEps3qEGgoNJVN-22bQQSFe35WCY1g/view?usp=drivesdk | staged | CPU-only headless (no CUDA/GUI); 126MB; DB creation verified via AppImage |
 | openMVS | photogrammetry | AGPL-3.0 (verified) | skipped | | | builds all deps from source; 3-5h on 2 cores (see status/openmvs.md) |
 | MicMac | photogrammetry | CECILL-B (verified) | skipped | | | big suite; 2-3h on 2 cores (see status/micmac.md) |
 | Blender | DCC | GPL | deferred | | | official portable tarball exists; decide later whether source build is worth it |

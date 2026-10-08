@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=fTetWild
+Comment=fTetWild mesh tool (command line)
+Exec=FloatTetwild
+Icon=fTetWild
+Terminal=true
+Categories=Graphics;3DGraphics;
