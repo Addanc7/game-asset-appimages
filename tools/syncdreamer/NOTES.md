@@ -40,3 +40,16 @@
 - `SyncDreamer-x86_64.AppImage --help` prints usage (verified via AppDir AppRun).
 - `generate.py --help` prints full argparse CLI (all options).
 - GPU inference untestable in the build VM (no NVIDIA GPU); recorded per tool.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`SyncDreamer-x86_64.AppImage.part-00` … `.part-08` (9 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh SyncDreamer-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 9
+- SHA256 of reassembled AppImage: `2188d912e7a29dcc05cf9d3d5531544e0a502194ed57d5ee86138b0febf35725`

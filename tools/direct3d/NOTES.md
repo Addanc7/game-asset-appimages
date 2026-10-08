@@ -24,3 +24,16 @@
   produced an empty wheel (RECORD contained only dist-info), so the
   pure-Python `direct3d/` package tree is copied straight from the source
   into `site-packages` instead. Reproducible and from-source either way.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`Direct3D-x86_64.AppImage.part-00` … `.part-06` (7 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh Direct3D-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 7
+- SHA256 of reassembled AppImage: `47eb585038aa94ae60d715664017b2987043ca4364d488cf3acfebe667b43c8b`

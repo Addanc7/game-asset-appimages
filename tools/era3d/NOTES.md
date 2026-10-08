@@ -51,3 +51,16 @@
 - Import chain verified: `mvdiffusion.pipelines.pipeline_mvdiffusion_unclip`,
   `mvdiffusion.data.single_image_dataset`, `utils.misc` all import OK.
 - GPU inference untestable in the build VM (no NVIDIA GPU); recorded per tool.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`Era3D-x86_64.AppImage.part-00` … `.part-07` (8 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh Era3D-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 8
+- SHA256 of reassembled AppImage: `18a4309ca9cfe2853eb02de87bc9d3a5a59215f00085258339eb2d8c6c4e94c5`

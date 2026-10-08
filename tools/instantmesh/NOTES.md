@@ -20,3 +20,16 @@
   (torch/diffusers/transformers/pytorch_lightning/nvdiffrast/PyMCubes/xatlas/rembg).
   GPU inference not testable in the build sandbox (no NVIDIA GPU) — launch
   through first-run download was code-reviewed, not executed.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`InstantMesh-x86_64.AppImage.part-00` … `.part-06` (7 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh InstantMesh-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 7
+- SHA256 of reassembled AppImage: `d9d11f6d92a6b8ccf817fae0623019c348142c457d45de4c4526886633f45782`

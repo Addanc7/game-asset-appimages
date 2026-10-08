@@ -37,3 +37,16 @@
 ## Verification
 - `CraftsMan3D-x86_64.AppImage --help` prints usage (verified via AppDir AppRun).
 - GPU inference untestable in the build VM (no NVIDIA GPU); recorded per tool.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`CraftsMan3D-x86_64.AppImage.part-00` … `.part-07` (8 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh CraftsMan3D-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 8
+- SHA256 of reassembled AppImage: `210add56e8c6b31a6191a69d3d1d17058e48b1f6b9e643bab27bf025f58af6f4`

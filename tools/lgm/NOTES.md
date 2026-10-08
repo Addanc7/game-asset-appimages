@@ -42,3 +42,16 @@
 - `LGM-x86_64.AppImage --help` and `lrm --help` print the full tyro CLI (import chain:
   torch, diffusers, transformers, rembg, kiui, LGM model — all OK).
 - GPU inference untestable in the build VM (no NVIDIA GPU); recorded per tool.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`LGM-x86_64.AppImage.part-00` … `.part-07` (8 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh LGM-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 8
+- SHA256 of reassembled AppImage: `a19bae96cddc8735e27758621d562f491a63f958986ba35b0dfb6769595787af`

@@ -40,3 +40,16 @@
   (CUDA EP listed) import; all upstream modules compile (`compileall`);
   `scripts.utils` + `app.utils` import (CPU fallback path).
   GPU inference not testable in the build sandbox (no NVIDIA GPU).
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`Unique3D-x86_64.AppImage.part-00` … `.part-07` (8 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh Unique3D-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 8
+- SHA256 of reassembled AppImage: `c431e5bd5e8707bd8355a5efef27280e22d6d0a6951d572f75bb4869a2d6c63e`

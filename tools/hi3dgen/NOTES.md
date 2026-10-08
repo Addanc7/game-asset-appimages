@@ -24,3 +24,16 @@
   numpy==1.26.4, but downgrading would break opencv/rembg); `Hi3DGenPipeline`
   imports (`[SPARSE] Backend: spconv, Attention: xformers`).
   GPU inference not testable in the build sandbox (no NVIDIA GPU).
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`Hi3DGen-x86_64.AppImage.part-00` … `.part-06` (7 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh Hi3DGen-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 7
+- SHA256 of reassembled AppImage: `1296be196632c9117eb701bd20e32d5be0e0b8fe39a590be020ae325890bde53`

@@ -44,3 +44,16 @@
 - `craftsman.models.autoencoders.michelangelo_autoencoder.MichelangeloAutoencoder`
   imports OK ("dora imports OK").
 - GPU inference untestable in the build VM (no NVIDIA GPU); recorded per tool.
+
+## Delivery (chunked)
+
+The AppImage is too large for a single upload, so it is distributed as ~400 MB
+chunks in the Google Drive folder `game-asset-appimages`:
+`Dora-x86_64.AppImage.part-00` … `.part-07` (8 chunks).
+
+To reassemble: download all `.part-*` files plus `reassemble.sh` from the same
+Drive folder into one directory, then run `./reassemble.sh Dora-x86_64.AppImage`.
+See `CHUNKS_README.md` (repo root and Drive folder) for full instructions.
+
+- Chunks: 8
+- SHA256 of reassembled AppImage: `949e3a1d30a396fc54b237c71001413666ae112501f456353a85e2b95126536b`
