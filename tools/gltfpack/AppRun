@@ -1,0 +1,4 @@
+#!/bin/sh
+# AppRun for gltfpack — pure CLI, just exec the binary with all args
+HERE="$(dirname "$(readlink -f "$0")")"
+exec "$HERE/usr/bin/gltfpack" "$@"

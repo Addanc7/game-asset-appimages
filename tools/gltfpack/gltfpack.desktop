@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=gltfpack
+Comment=glTF/GLB optimizer — mesh compression, simplification, remeshing
+Exec=gltfpack
+Icon=gltfpack
+Terminal=true
+Type=Application
+Categories=Development;Graphics;
+MimeType=model/gltf-binary;model/gltf+json;
+X-AppImage-Version=1.3
