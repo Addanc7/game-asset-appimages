@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=FBX2glTF
+Comment=FBX2glTF mesh tool (command line)
+Exec=fbx2glb
+Icon=FBX2glTF
+Terminal=true
+Categories=Graphics;3DGraphics;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Assimp
+Comment=Assimp mesh tool (command line)
+Exec=assimp
+Icon=Assimp
+Terminal=true
+Categories=Graphics;3DGraphics;

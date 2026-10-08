@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OpenCOLLADA
+Comment=COLLADA document validators (command line)
+Exec=OpenCOLLADA
+Icon=OpenCOLLADA
+Terminal=true
+Categories=Graphics;3DGraphics;

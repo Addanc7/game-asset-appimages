@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Obj2gltf
+Comment=OBJ to glTF converter (command line)
+Exec=obj2gltf
+Icon=Obj2gltf
+Terminal=true
+Categories=Graphics;3DGraphics;

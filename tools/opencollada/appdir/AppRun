@@ -1,0 +1,22 @@
+#!/bin/sh
+HERE="$(dirname "$(readlink -f "$0")")"
+export LD_LIBRARY_PATH="$HERE/usr/lib:$LD_LIBRARY_PATH"
+name="$(basename "$0")"
+case "$name" in
+  DAEValidator) exec "$HERE/usr/bin/DAEValidator" "$@" ;;
+  OpenCOLLADAValidator|COLLADAValidator) exec "$HERE/usr/bin/OpenCOLLADAValidator" "$@" ;;
+esac
+if [ $# -eq 0 ]; then
+  echo "OpenCOLLADA AppImage — bundled CLIs:"
+  echo "  DAEValidator            validate COLLADA documents against schema + coherency tests"
+  echo "  OpenCOLLADAValidator    validate COLLADA documents against the schema"
+  echo ""
+  echo "Usage: ./OpenCOLLADA-x86_64.AppImage [dae|collada] <file.dae> [options...]"
+  echo "   (no selector defaults to DAEValidator)"
+  exit 0
+fi
+case "$1" in
+  dae|DAEValidator) shift; exec "$HERE/usr/bin/DAEValidator" "$@" ;;
+  collada|OpenCOLLADAValidator|COLLADAValidator) shift; exec "$HERE/usr/bin/OpenCOLLADAValidator" "$@" ;;
+  *) exec "$HERE/usr/bin/DAEValidator" "$@" ;;
+esac

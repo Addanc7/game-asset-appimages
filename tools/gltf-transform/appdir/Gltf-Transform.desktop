@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Gltf-Transform
+Comment=glTF 2.0 SDK command-line interface (command line)
+Exec=gltf-transform
+Icon=Gltf-Transform
+Terminal=true
+Categories=Graphics;3DGraphics;

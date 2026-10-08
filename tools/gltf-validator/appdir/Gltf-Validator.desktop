@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Gltf-Validator
+Comment=Gltf-Validator mesh tool (command line)
+Exec=gltf_validator
+Icon=Gltf-Validator
+Terminal=true
+Categories=Graphics;3DGraphics;

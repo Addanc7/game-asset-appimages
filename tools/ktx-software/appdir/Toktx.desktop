@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Toktx
+Comment=Toktx mesh tool (command line)
+Exec=ktx
+Icon=Toktx
+Terminal=true
+Categories=Graphics;3DGraphics;
