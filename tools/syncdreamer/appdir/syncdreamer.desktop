@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SyncDreamer
+Comment=SyncDreamer — single image to 16 multiview-consistent images
+Exec=syncdreamer
+Icon=syncdreamer
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,24 @@
+#!/bin/bash
+# SyncDreamer AppImage launcher
+APPDIR="${APPDIR:-$(dirname "$(readlink -f "$0")")}"
+export APPDIR
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# Never let the host Python env leak into the bundled interpreter
+unset PYTHONHOME
+unset PYTHONPATH
+
+# User-writable data (models, caches) — checkpoints download here on first run
+export SYNC_DREAMER_DATA="${SYNC_DREAMER_DATA:-$HOME/.local/share/syncdreamer-appimage}"
+export HF_HOME="$SYNC_DREAMER_DATA/hf"
+export TORCH_HOME="$SYNC_DREAMER_DATA/torch"
+
+# 8GB-VRAM perf knobs (overridable)
+export CUDA_MODULE_LOADING="${CUDA_MODULE_LOADING:-LAZY}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+mkdir -p "$SYNC_DREAMER_DATA"
+
+exec "$APPDIR/usr/bin/python3.11" "$APPDIR/usr/share/syncdreamer/syncdreamer_app.py" "$@"

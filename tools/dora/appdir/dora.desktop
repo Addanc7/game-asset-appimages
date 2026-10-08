@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dora
+Comment=Dora-VAE — shape autoencoder mesh round-trip (encode/decode 3D meshes)
+Exec=dora
+Icon=dora
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false

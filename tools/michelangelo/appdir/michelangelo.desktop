@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Michelangelo
+Comment=Michelangelo — text/image/pointcloud to 3D mesh
+Exec=michelangelo
+Icon=michelangelo
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false

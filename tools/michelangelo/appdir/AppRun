@@ -1,0 +1,22 @@
+#!/bin/bash
+# Michelangelo AppImage launcher
+APPDIR="${APPDIR:-$(dirname "$(readlink -f "$0")")}"
+export APPDIR
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+unset PYTHONHOME
+unset PYTHONPATH
+
+export MICHELANGELO_DATA="${MICHELANGELO_DATA:-$HOME/.local/share/michelangelo-appimage}"
+export HF_HOME="$MICHELANGELO_DATA/hf"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export TORCH_HOME="$MICHELANGELO_DATA/torch"
+
+export CUDA_MODULE_LOADING="${CUDA_MODULE_LOADING:-LAZY}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+mkdir -p "$MICHELANGELO_DATA"
+
+exec "$APPDIR/usr/bin/python3.11" "$APPDIR/usr/share/michelangelo/michelangelo_app.py" "$@"

@@ -1,0 +1,22 @@
+#!/bin/bash
+# CraftsMan3D AppImage launcher
+APPDIR="${APPDIR:-$(dirname "$(readlink -f "$0")")}"
+export APPDIR
+
+export PATH="$APPDIR/usr/bin:$PATH"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+unset PYTHONHOME
+unset PYTHONPATH
+
+export CRAFTSMAN_DATA="${CRAFTSMAN_DATA:-$HOME/.local/share/craftsman3d-appimage}"
+export HF_HOME="$CRAFTSMAN_DATA/hf"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export TORCH_HOME="$CRAFTSMAN_DATA/torch"
+
+export CUDA_MODULE_LOADING="${CUDA_MODULE_LOADING:-LAZY}"
+export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
+
+mkdir -p "$CRAFTSMAN_DATA"
+
+exec "$APPDIR/usr/bin/python3.11" "$APPDIR/usr/share/craftsman3d/craftsman_app.py" "$@"

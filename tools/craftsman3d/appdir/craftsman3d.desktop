@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=CraftsMan3D
+Comment=CraftsMan3D — single image to 3D mesh (Dora-VAE)
+Exec=craftsman3d
+Icon=craftsman3d
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false

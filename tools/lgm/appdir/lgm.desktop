@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=LGM
+Comment=Large Multi-View Gaussian Model — single image to 3D Gaussians (PLY) + 360 video
+Exec=lgm
+Icon=lgm
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Era3D
+Comment=Era3D — high-resolution multiview diffusion, single image to 6 views + textured mesh
+Exec=era3d
+Icon=era3d
+Type=Application
+Categories=Graphics;3DGraphics;
+Terminal=true
+StartupNotify=false
