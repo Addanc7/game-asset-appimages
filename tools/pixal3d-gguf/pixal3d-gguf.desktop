@@ -1,8 +1,1 @@
-[Desktop Entry]
-Name=Pixal3D GGUF
-Comment=Image to 3D (Pixal3D single-view quantized) - textured GLB export
-Exec=trellis-cli
-Icon=pixal3d-gguf
-Type=Application
-Categories=Graphics;3DGraphics;
-Terminal=true
+W0Rlc2t0b3AgRW50cnldCk5hbWU9UGl4YWwzRCBHR1VGCkNvbW1lbnQ9SW1hZ2UgdG8gM0QgKFBpeGFsM0Qgc2luZ2xlLXZpZXcgcXVhbnRpemVkKSAtIHRleHR1cmVkIEdMQiBleHBvcnQKRXhlYz10cmVsbGlzLWNsaQpJY29uPXBpeGFsM2QtZ2d1ZgpUeXBlPUFwcGxpY2F0aW9uCkNhdGVnb3JpZXM9R3JhcGhpY3M7M0RHcmFwaGljczsKVGVybWluYWw9dHJ1ZQo=

@@ -1,8 +1,1 @@
-[Desktop Entry]
-Name=TRELLIS.2 GGUF
-Comment=Image to 3D (TRELLIS.2 quantized) - textured GLB export
-Exec=trellis-cli
-Icon=trellis2-gguf
-Type=Application
-Categories=Graphics;3DGraphics;
-Terminal=true
+W0Rlc2t0b3AgRW50cnldCk5hbWU9VFJFTExJUy4yIEdHVUYKQ29tbWVudD1JbWFnZSB0byAzRCAoVFJFTExJUy4yIHF1YW50aXplZCkgLSB0ZXh0dXJlZCBHTEIgZXhwb3J0CkV4ZWM9dHJlbGxpcy1jbGkKSWNvbj10cmVsbGlzMi1nZ3VmClR5cGU9QXBwbGljYXRpb24KQ2F0ZWdvcmllcz1HcmFwaGljczszREdyYXBoaWNzOwpUZXJtaW5hbD10cnVlCg==

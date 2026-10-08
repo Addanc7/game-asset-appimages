@@ -1,17 +1,1 @@
-# TRELLIS.2 GGUF (AppImage)
-
-Single image → textured GLB, powered by TRELLIS.2 quantized to Q8_0 GGUF so it
-fits in 8 GB VRAM. Built from source — see `build.sh` and `NOTES.md`.
-
-## Quick start
-
-```bash
-chmod +x TRELLIS2-GGUF-x86_64.AppImage
-./TRELLIS2-GGUF-x86_64.AppImage input.png output.glb
-```
-
-First run downloads ~10 GB of weights (resumable) to
-`~/.local/share/trellis2-gguf/models`. Needs an NVIDIA GPU (CUDA sm_89 / RTX 4060
-target; driver only, no toolkit).
-
-Options: `--res 512` for the light path (~1.8 GB VRAM), `--help` for all flags.
+IyBUUkVMTElTLjIgR0dVRiAoQXBwSW1hZ2UpCgpTaW5nbGUgaW1hZ2Ug4oaSIHRleHR1cmVkIEdMQiwgcG93ZXJlZCBieSBUUkVMTElTLjIgcXVhbnRpemVkIHRvIFE4XzAgR0dVRiBzbyBpdApmaXRzIGluIDggR0IgVlJBTS4gQnVpbHQgZnJvbSBzb3VyY2Ug4oCUIHNlZSBgYnVpbGQuc2hgIGFuZCBgTk9URVMubWRgLgoKIyMgUXVpY2sgc3RhcnQKCmBgYGJhc2gKY2htb2QgK3ggVFJFTExJUzItR0dVRi14ODZfNjQuQXBwSW1hZ2UKLi9UUkVMTElTMi1HR1VGLXg4Nl82NC5BcHBJbWFnZSBpbnB1dC5wbmcgb3V0cHV0LmdsYgpgYGAKCkZpcnN0IHJ1biBkb3dubG9hZHMgfjEwIEdCIG9mIHdlaWdodHMgKHJlc3VtYWJsZSkgdG8KYH4vLmxvY2FsL3NoYXJlL3RyZWxsaXMyLWdndWYvbW9kZWxzYC4gTmVlZHMgYW4gTlZJRElBIEdQVSAoQ1VEQSBzbV84OSAvIFJUWCA0MDYwCnRhcmdldDsgZHJpdmVyIG9ubHksIG5vIHRvb2xraXQpLgoKT3B0aW9uczogYC0tcmVzIDUxMmAgZm9yIHRoZSBsaWdodCBwYXRoICh+MS44IEdCIFZSQU0pLCBgLS1oZWxwYCBmb3IgYWxsIGZsYWdzLgo=
