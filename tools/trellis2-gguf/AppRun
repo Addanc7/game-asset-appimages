@@ -1,0 +1,42 @@
+#!/bin/bash
+# TRELLIS.2-GGUF AppImage launcher.
+# Usage: TRELLIS2-GGUF-x86_64.AppImage input.png output.glb [extra trellis-cli args]
+# On first run, downloads the TRELLIS.2 q8_0 GGUF weights (~10 GB) to
+# ~/.local/share/trellis2-gguf/models with resume support.
+set -u
+APPDIR="$(dirname "$(readlink -f "$0")")"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib:${LD_LIBRARY_PATH:-}"
+
+MODELS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/trellis2-gguf/models"
+BASE_URL="https://huggingface.co/ilintar/trellis2-gguf/resolve/main/q8"
+
+# --help / -h: no weights needed
+for a in "$@"; do
+  if [ "$a" = "--help" ] || [ "$a" = "-h" ]; then
+    exec "$APPDIR/usr/bin/trellis-cli" --help
+  fi
+done
+
+# default to the 1024 cascade (8GB-VRAM sensible); user can override with --res
+HAS_RES=0
+for a in "$@"; do
+  [ "$a" = "--res" ] && HAS_RES=1
+done
+
+"$APPDIR/usr/share/trellis2-gguf/ensure_weights.sh" "$MODELS_DIR" "$BASE_URL" \
+  "birefnet.gguf|882749024" \
+  "dinov3.gguf|323657920" \
+  "ss_flow.gguf|1376059040" \
+  "ss_dec.gguf|147379392" \
+  "shape_flow_512.gguf|1376125952" \
+  "shape_flow_1024.gguf|1376125952" \
+  "shape_dec.gguf|881361568" \
+  "tex_flow_512.gguf|1376178176" \
+  "tex_flow_1024.gguf|1376178176" \
+  "tex_dec.gguf|881344576" || exit 1
+
+if [ "$HAS_RES" = "0" ]; then
+  exec "$APPDIR/usr/bin/trellis-cli" --models "$MODELS_DIR" --res 1024 "$@"
+else
+  exec "$APPDIR/usr/bin/trellis-cli" --models "$MODELS_DIR" "$@"
+fi

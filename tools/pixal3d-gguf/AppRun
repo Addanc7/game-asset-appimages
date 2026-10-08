@@ -1,0 +1,42 @@
+#!/bin/bash
+# Pixal3D-GGUF AppImage launcher (single-view Pixal3D backbone).
+# Usage: Pixal3D-GGUF-x86_64.AppImage input.png output.glb [extra trellis-cli args]
+# On first run, downloads the pixal3d-sv-q8_0 v1 weights (~8.1 GB + optional
+# BiRefNet 0.9 GB) to ~/.local/share/pixal3d-gguf/models-sv with resume support.
+set -u
+APPDIR="$(dirname "$(readlink -f "$0")")"
+export LD_LIBRARY_PATH="$APPDIR/usr/lib:${LD_LIBRARY_PATH:-}"
+
+MODELS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pixal3d-gguf/models-sv"
+SV_URL="https://huggingface.co/raven38/pixal3d-sv-q8_0-v1/resolve/main"
+T2_URL="https://huggingface.co/ilintar/trellis2-gguf/resolve/main"
+
+# --help / -h: no weights needed
+for a in "$@"; do
+  if [ "$a" = "--help" ] || [ "$a" = "-h" ]; then
+    exec "$APPDIR/usr/bin/trellis-cli" --help
+  fi
+done
+
+"$APPDIR/usr/share/pixal3d-gguf/ensure_weights.sh" "$MODELS_DIR" "$SV_URL" \
+  "dinov3.gguf|323657920" \
+  "pixal3d_naf.gguf|1334656" \
+  "pixal3d_ss_flow_sv.gguf|1426559744" \
+  "ss_dec.gguf|147379392" \
+  "pixal3d_shape_flow_512_sv.gguf|1476761760" \
+  "shape_dec.gguf|881361568" \
+  "pixal3d_shape_flow_1024_sv.gguf|1476761760" \
+  "pixal3d_tex_flow_1024_sv.gguf|1476813984" \
+  "tex_dec.gguf|881344576" || exit 1
+
+# BiRefNet (optional, better background removal; CLI falls back to threshold matte without it)
+"$APPDIR/usr/share/pixal3d-gguf/ensure_weights.sh" "$MODELS_DIR" "$T2_URL" \
+  "birefnet.gguf|882749024" || echo "[warn] BiRefNet download failed; continuing with threshold matte fallback"
+
+if [ "$#" -lt 2 ]; then
+  echo "Usage: Pixal3D-GGUF-x86_64.AppImage input.png output.glb [extra trellis-cli args]" >&2
+  echo "       (single-view Pixal3D: --sv-image is added automatically)" >&2
+  exit 1
+fi
+IN="$1"; OUT="$2"; shift 2
+exec "$APPDIR/usr/bin/trellis-cli" --sv-image "$IN" -o "$OUT" --models-sv "$MODELS_DIR" "$@"
